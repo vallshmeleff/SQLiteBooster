@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     //=============================================
     //
@@ -19,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        String[] splitted = unBooster("<shmelev>Upgraded android <shmelev>gradle plugin to 7.2.2 <shmelev>and the problem is solved.");
+        Log.d("= unBoosted BOOST =", "== == == == == ==| BOOST |== == == ==" + splitted[0]);
+        Log.d("= unBoosted BOOST =", "== == == == == ==| BOOST |== == == ==" + splitted[1]);
+        Log.d("= unBoosted BOOST =", "== == == == == ==| BOOST |== == == ==" + splitted[2]);
 
     } // OnCreate
 
@@ -56,10 +61,14 @@ public class MainActivity extends AppCompatActivity {
         // ============================================================
         // Convert Boosted Text to unBoosted (Splitter)
         // ============================================================
+        String substr = unBoosted.substring(0,9);
         String[] splitted = unBoosted.split("<shmelev>"); // Split encrypted string by delimiter and write to array
-        Log.d("= unBoosted text =","== == == == == ==| UNBOOSTED |== == == == " +  unBoosted);
+            Log.d("= unBoosted text =", "== == == == == ==| UNBOOSTED |== == == == " + unBoosted);
+            Log.d("= unBoosted SUBSTRING =", "== == == == == ==| SUBSTRING |== == == ==" + substr);
         return splitted; //Return Text array
     }
+
+
 
 
 } // MainActivity
